@@ -65,8 +65,31 @@ body {
   display: flex;
   gap: 10px;
   justify-content: space-between;
-  width: 50%;
   align-items: center;
+  width: 50%;
+}
+
+.cat-asd {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cat-ent {
+  display: flex;
+  flex-direction: column;
+}
+
+.entries-container {
+  width: 60%;
+}
+
+aside {
+  width: 70%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  background-color: yellow;
 }
 
 .category {
