@@ -27,7 +27,7 @@ body {
   align-items: center;
 }
 
-.nav-items > a {
+.nav-items > Link {
   text-decoration: none;
 }
 
@@ -67,6 +67,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 50%;
+  margin-top: 0;
 }
 
 .cat-asd {
@@ -78,10 +79,16 @@ body {
 .cat-ent {
   display: flex;
   flex-direction: column;
+
 }
 
 .entries-container {
-  width: 60%;
+  width: 100%;
+  padding: 20px;
+}
+
+.counter {
+  text-align: center;
 }
 
 aside {
@@ -89,7 +96,8 @@ aside {
   padding-left: 15px;
   margin-left: 15px;
   float: right;
-  background-color: yellow;
+  background-color: #E64747;
+  color: white;
 }
 
 .category {

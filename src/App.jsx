@@ -1,26 +1,56 @@
-import Nav from './Components/Nav'
-import Hero from './Components/Hero'
-import Categories from './Components/Categories'
-import Aside from './Components/Aside'
-import Entries from './Components/Entries'
+import { useEffect, useState } from 'react'
+import { EVENTS } from '../consts'
 import './App.css'
+import AboutMe from './pages/AboutMe'
+import Home from './pages/Home'
+import Contact from './pages/Contact'
+
+const {POPSTATE, PUSHSTATE} = EVENTS
+
+function Router ({ routes = [], defaultComponent: DefaultComponent = () => null }) {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname)
+
+  useEffect( () => { 
+   const onLocationChange = () => {
+     setCurrentPath(window.location.pathname)
+   }
+ 
+   window.addEventListener(EVENTS.PUSHSTATE, onLocationChange)
+   window.addEventListener(POPSTATE, onLocationChange)
+ 
+   return () => {
+     window.removeEventListener(EVENTS.PUSHSTATE, onLocationChange)
+     window.removeEventListener(POPSTATE, onLocationChange)
+   }
+  }, [])
+
+  const Page = routes.find(({path}) => path === currentPath)?.Component
+
+  return Page ? <Page /> : <DefaultComponent/>
+
+}
 
 function App() {
 
   return (
-    <>
-    <Nav />
-    <Hero />
-    <div className='cat-asd'>
+    <main>
 
-      <div className='cat-ent'>
+    <Router routes={[
+        {
+          path: '/',
+          Component: Home
+        }, 
+        {
+          path:'/about',
+          Component: AboutMe
+        },
+        {
+          path: '/contact',
+          Component: Contact
+        }
+      ]} />
 
-      <Categories />
-      <Entries />
-      </div>
-    <Aside />
-    </div>
-    </>
+    </main>
   )
 }
 

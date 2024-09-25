@@ -1,3 +1,4 @@
+import { Link } from "./Link"
 
 
 function Nav() {
@@ -12,9 +13,15 @@ function Nav() {
 
         <ul className='nav-items'>
 
-            <a href=""><li className='nav-item selected'>Home</li></a>
-            <a href=""><li className='nav-item'>About me</li></a>
-            <a href=""><li className='nav-item'>Contact</li></a>
+            <li className='nav-item selected'>
+              <Link to="/">Home</Link> 
+            </li>
+            <li className='nav-item'>
+              <Link to="/about">About me</Link>
+            </li>
+            <li className='nav-item'>
+              <Link to="/contact">Contact</Link>
+            </li>
         </ul>
     </nav>
   )
