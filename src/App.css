@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+  --red: #E64747;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -52,12 +56,37 @@ body {
   width: 100%;
 }
 
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 20px;
+
+}
+
+.buttons > a {
+  background-color: var(--red);
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s ease;
+}
+
+.buttons > a:hover {
+  background-color: #8a1212;
+}
+
 .hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
+  margin-top: 300px;
 }
 
 .image-container {
@@ -95,6 +124,12 @@ body {
 
 }
 
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .entries-container {
   width: 100%;
   padding: 20px;
@@ -109,7 +144,7 @@ aside {
   padding-left: 15px;
   margin-left: 15px;
   float: right;
-  background-color: #E64747;
+  background-color: var(--red);
   color: white;
 }
 
@@ -131,8 +166,39 @@ aside {
   border-radius: 10px;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.3s ease;
+  padding: 10px;
+  color: white;
+  background-color: var(--red);
+  border-radius: 10px;
+}
+
+.container:hover {
+  background-color: #4b4747;
+}
+
+@media screen and (max-width: 700px) {
+
+  .hero-content {
+    margin-top: 40px;
+  }
+  
+}
+
 @media screen and (max-width: 415px) {
   .overlay {
     height: 99%;
+  }
+
+  .buttons > a { 
+    padding: 10px;
+  }
+
+  .hero-content {
+    font-size: 10px;
   }
 }
