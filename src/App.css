@@ -27,15 +27,20 @@ body {
   align-items: center;
 }
 
-.nav-items > Link {
+.nav-item > a {
   text-decoration: none;
-}
-
-.nav-item {
-  list-style: none;
   color: #333333;
   font-weight: bold;
   transition: 0.3s ease;
+}
+
+.nav-item > a:hover {
+  color: red;
+}
+
+
+.nav-item {
+  list-style: none;
 }
 
 .nav-item:hover {
@@ -45,6 +50,14 @@ body {
 .hero-img {
   height: 40%;
   width: 100%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 .image-container {
