@@ -4,6 +4,8 @@ import './App.css'
 import AboutMe from './pages/AboutMe'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
+import SetEntry from './pages/SetEntry'
+import Entry from './pages/Entry'
 
 const {POPSTATE, PUSHSTATE} = EVENTS
 
@@ -47,6 +49,14 @@ function App() {
         {
           path: '/contact',
           Component: Contact
+        },
+        {
+          path: '/setEntry',
+          Component: SetEntry
+        },
+        {
+          path: '/Entry',
+          Component : Entry
         }
       ]} />
 

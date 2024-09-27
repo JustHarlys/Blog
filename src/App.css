@@ -130,6 +130,11 @@ body {
   gap: 20px;
 }
 
+.container > a {
+  color: white;
+  text-decoration: none;
+}
+
 .entries-container {
   width: 100%;
   padding: 20px;
@@ -146,6 +151,7 @@ aside {
   float: right;
   background-color: var(--red);
   color: white;
+  border-radius: 10px;
 }
 
 .category {
@@ -154,6 +160,7 @@ aside {
   color: #333333;
   font-weight: bold;
   text-decoration: none;
+
 }
 
 .category:hover {
@@ -178,7 +185,19 @@ aside {
 }
 
 .container:hover {
-  background-color: #4b4747;
+  background-color: #751f1f;
+}
+
+.set-entry {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 30px;
+  padding: 20px;
+}
+
+.set-entry > select {
+  width: 35%;
 }
 
 @media screen and (max-width: 700px) {
