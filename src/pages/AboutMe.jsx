@@ -1,11 +1,11 @@
 import Nav from "../Components/Nav"
-import Hero from "../Components/Hero"
+import AboutMeHero from "../Components/AboutMeHero"
 
 function AboutMe() {
   return (
       <>
       <Nav />
-      <Hero />
+      <AboutMeHero />
       </>
  
   )

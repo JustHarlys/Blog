@@ -55,7 +55,7 @@ function App() {
           Component: SetEntry
         },
         {
-          path: '/Entry',
+          path: '/entry',
           Component : Entry
         }
       ]} />
