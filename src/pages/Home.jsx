@@ -12,7 +12,6 @@ const allEntries = entriesTemplate.map(entry => {
   const entryArray = entry.entry.split(' ')
   const entryWords = entryArray.slice(0, 113).join(' ')
 
-  
 
   return <Entries 
   key={nanoid()}

@@ -15,6 +15,17 @@ function AboutMeHero() {
           </div>
         </div>
 
+        <table>
+          <tr>
+            <th>Date: </th>
+            <th>Contact: </th>
+            <th>Country: </th>
+          </tr>
+          <td>14-09-2024</td>
+          <td>Lorem Ipsum</td>
+          <td>Dominican Republic</td>
+        </table>
+
     </section>
   )
 }
