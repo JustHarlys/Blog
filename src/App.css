@@ -173,8 +173,53 @@ aside {
   border-radius: 10px;
 }
 
+.about-me-whole-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 table {
+  border-collapse: collapse;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me-title {
+  text-align: center;
+  color: var(--red);
+}
+
+.about-me-p {
+  text-align: center;
+  padding: 20px;
+  width: 50%;
+}
+
+tr {
+  display: block;
+  float: left;
+
+}
+
+th,td {
+  display: block;
   border: 1px solid black;
+  padding: 20px;
+}
+
+.table-head {
+  color: var(--red);
+}
+
+tr > *:not(:first-child) {
+  border-top: 0;
+}
+tr:not(:first-child) > * {
+  border-left: ;
 }
 
 .aside-entry {

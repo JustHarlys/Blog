@@ -1,8 +1,8 @@
 import Harlys from '../assets/me.jfif'
-import { Link } from './Link'
 
 function AboutMeHero() {
   return (
+    <div className='about-me-whole-container'>
     <section className="about-me-container">
 
       <img src={Harlys} alt="Imagen de Harlys" className="harlys-img"/>
@@ -15,18 +15,33 @@ function AboutMeHero() {
           </div>
         </div>
 
-        <table>
-          <tr>
-            <th>Date: </th>
-            <th>Contact: </th>
-            <th>Country: </th>
-          </tr>
-          <td>14-09-2024</td>
-          <td>Lorem Ipsum</td>
-          <td>Dominican Republic</td>
-        </table>
 
     </section>
+
+    <h1 className='about-me-title'>Sobre mi</h1>
+
+    <p className='about-me-p'>
+    Mi nombre es Harlys De Jesús Almánzar Polanco,
+      nací en la Republica Dominicana,
+      me dedico a la creación y desarrollo de páginas web desde 2023.
+      Estudio la carrera de Ingeniería de Software desde el 2020.
+    </p>
+
+<table>
+<tr>
+  <th className='table-head'>Nombre: </th>
+  <th className='table-head'>Fecha de Nacimiento: </th>
+  <th className='table-head'>Correo: </th>
+  <th className='table-head'>Idiomas: </th>
+</tr>
+<tr>
+  <td>Harlys Almanzar</td>
+  <td>14/09/2024</td>
+  <td>harlysmc@gmail.com</td>
+  <td>Español, Ingles y Ruso</td>
+</tr>
+</table>
+    </div>
   )
 }
 
