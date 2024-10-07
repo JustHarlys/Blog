@@ -4,7 +4,7 @@ import Aside from '../Components/Aside'
 import Entries from '../Components/Entries'
 import { nanoid } from 'nanoid'
 import Footer from '../Components/Footer'
-import entriesTemplate from '../../entriesTemplate'
+import entriesTemplate from '../data/entriesTemplate'
 import { useState } from 'react'
 
 const itemsPerPage = 3;

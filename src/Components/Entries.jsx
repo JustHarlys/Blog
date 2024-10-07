@@ -7,7 +7,7 @@ function Entries({id, category, title, entry}) {
 
         <div className="entries-inside-container">
 
-        <Link to={`/entry/${id}`}>
+        <Link to={`/entry`}>
         <h1>{title}</h1>
         <h3>Categoria: {category}</h3>
         <p>{entry}</p>

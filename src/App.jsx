@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { EVENTS } from '../consts'
+import { EVENTS } from './data/consts'
 import './App.css'
 import AboutMe from './pages/AboutMe'
 import Home from './pages/Home'

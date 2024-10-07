@@ -1,4 +1,7 @@
 import Harlys from '../assets/me.jfif'
+import links from '../data/links'
+
+const {link, app} = links
 
 function AboutMeHero() {
   return (
@@ -41,6 +44,9 @@ function AboutMeHero() {
   <td>Español, Ingles y Ruso</td>
 </tr>
 </table>
+
+    <h1 className='about-me-title'>Redes Sociales</h1>
+    <a href={link}><i className={app}></i></a>
     </div>
   )
 }

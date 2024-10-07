@@ -1,5 +1,5 @@
 import Nav from "../Components/Nav"
-import { text } from "../../text"
+import { text } from "../data/text"
 
 
 function Entry() {
