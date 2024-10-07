@@ -3,7 +3,6 @@ import { EVENTS } from '../consts'
 import './App.css'
 import AboutMe from './pages/AboutMe'
 import Home from './pages/Home'
-import Contact from './pages/Contact'
 import SetEntry from './pages/SetEntry'
 import Entry from './pages/Entry'
 
@@ -45,10 +44,6 @@ function App() {
         {
           path:'/about',
           Component: AboutMe
-        },
-        {
-          path: '/contact',
-          Component: Contact
         },
         {
           path: '/setEntry',

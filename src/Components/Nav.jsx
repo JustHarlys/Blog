@@ -7,7 +7,7 @@ function Nav() {
 
         <div>
 
-        <h1 className='logo-text'>Harlys</h1>
+        <h1 className='logo-text'>Harlys's Blog</h1>
         </div>
 
 
@@ -18,9 +18,6 @@ function Nav() {
             </li>
             <li className='nav-item'>
               <Link to="/about">About me</Link>
-            </li>
-            <li className='nav-item'>
-              <Link to="/contact">Contact</Link>
             </li>
         </ul>
     </nav>

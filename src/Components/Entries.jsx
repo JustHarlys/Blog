@@ -1,20 +1,20 @@
 import { Link } from "./Link";
 
-function Entries({category, title, entry}) {
+function Entries({id, category, title, entry}) {
   return (
     <section className="entries-container">
       <div className="entry">
 
         <div className="container">
 
-        <Link to="/entry">
+        <Link to={`/entry/${id}`}>
         <h1>{title}</h1>
+        <h3>Categoria: {category}</h3>
         <p>{entry}</p>
         </Link>
 
         </div>
       
-        <p className="counter"> {'< 1/3 >'}</p>
 
       </div>
     </section >

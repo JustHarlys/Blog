@@ -1,6 +1,6 @@
 function Aside({category, title, entry}) {
   return (
-    <aside className="latest-entries">
+    
         <div className="aside-entry">
 
             <div className="container">
@@ -26,7 +26,6 @@ function Aside({category, title, entry}) {
             </div>
   */}
         </div>
-    </aside>
   )
 }
 
