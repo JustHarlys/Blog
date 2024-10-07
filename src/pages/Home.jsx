@@ -9,9 +9,10 @@ import { useState } from 'react'
 
 const itemsPerPage = 3;
 
+const slicedEntries = entriesTemplate.slice(0,3)
 
 
-const asideEntries = entriesTemplate.map(entry => {
+const asideEntries = slicedEntries.map(entry => {
 
   const entryArray = entry.entry.split(' ')
   const entryAside = entryArray.slice(0, 40).join(' ')

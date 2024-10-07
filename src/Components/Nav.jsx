@@ -1,7 +1,25 @@
+import { useEffect, useState } from "react"
 import { Link } from "./Link"
-
+import { useLocation } from "react-router-dom"
 
 function Nav() {
+
+  const [rutaActual, setRutaActual] = useState(window.location.pathname)
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setRutaActual(window.location.pathname)
+    }
+
+    window.addEventListener("popstate", handleLocationChange)
+
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange)
+    }
+
+  }, [])
+
+
   return (
     <nav className='nav-container'>
 
@@ -13,10 +31,10 @@ function Nav() {
 
         <ul className='nav-items'>
 
-            <li className='nav-item selected'>
+            <li className={`nav-item ${rutaActual === '/' ? 'selected' : ''}`}>
               <Link to="/">Home</Link> 
             </li>
-            <li className='nav-item'>
+            <li className={`nav-item ${rutaActual === '/about' ? 'selected' : '' }`}>
               <Link to="/about">About me</Link>
             </li>
         </ul>

@@ -5,7 +5,7 @@ function Entries({id, category, title, entry}) {
     <section className="entries-container">
       <div className="entry">
 
-        <div className="container">
+        <div className="entries-inside-container">
 
         <Link to={`/entry/${id}`}>
         <h1>{title}</h1>

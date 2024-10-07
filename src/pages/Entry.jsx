@@ -1,12 +1,8 @@
 import Nav from "../Components/Nav"
 import { text } from "../../text"
-import useParams from 'react-router-dom'
-
 
 
 function Entry() {
-
-  const idFromUrl = window.location.pathname.split("/").pop();
   
   return (
     <div>
