@@ -7,12 +7,19 @@ import Footer from '../Components/Footer'
 import entriesTemplate from '../data/entriesTemplate'
 import { useState } from 'react'
 
-const itemsPerPage = 3;
-
-const slicedEntries = entriesTemplate.slice(0,3)
 
 
-const asideEntries = slicedEntries.map(entry => {
+function Home() {
+
+  const [currentPage, setCurrentPage] = useState(1)
+
+
+  const itemsPerPage = 3;
+
+  const slicedEntries = entriesTemplate.slice(0,3)
+
+
+  const asideEntries = slicedEntries.map(entry => {
 
   const entryArray = entry.entry.split(' ')
   const entryAside = entryArray.slice(0, 40).join(' ')
@@ -23,11 +30,7 @@ const asideEntries = slicedEntries.map(entry => {
   category={entry.category}
   title={entry.title}
   />
-})
-
-function Home() {
-
-  const [currentPage, setCurrentPage] = useState(1)
+  })
 
   const totalPages = Math.ceil(entriesTemplate.length / itemsPerPage)
 
@@ -62,6 +65,8 @@ function Home() {
   }
 
   return (
+
+    
     <>
     <Nav />
     <Hero />

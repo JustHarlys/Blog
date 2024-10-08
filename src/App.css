@@ -351,6 +351,37 @@ footer > p {
   color: #8a1212;
 }
 
+.social-media-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.fa-brands {
+  font-size: 60px;
+  transition: 0.5s ease;
+  color: black;
+}
+
+.fa-instagram:hover {
+  color: rgb(247, 124, 206);
+}
+
+.fa-linkedin:hover {
+  color: #0275B4;
+}
+
+.fa-x-twitter:hover {
+  color: black;
+}
+
+.fa-github:hover {
+  color: #FFA100;
+}
+
+
 span {
   font-size: 1.4rem;
 }

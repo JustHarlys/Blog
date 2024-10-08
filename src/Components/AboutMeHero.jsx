@@ -1,7 +1,16 @@
+import { nanoid } from 'nanoid'
 import Harlys from '../assets/me.jfif'
 import links from '../data/links'
+import SocialMedia from './SocialMedia'
 
-const {link, app} = links
+const socialMedia = links.map(social => {
+  return <SocialMedia 
+  key={nanoid()}
+  app={social.app}
+  link={social.link}
+  />
+})
+
 
 function AboutMeHero() {
   return (
@@ -46,7 +55,10 @@ function AboutMeHero() {
 </table>
 
     <h1 className='about-me-title'>Redes Sociales</h1>
-    <a href={link}><i className={app}></i></a>
+    <div className='social-media-container'>
+
+    {socialMedia}
+    </div>
     </div>
   )
 }
