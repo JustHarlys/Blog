@@ -18,11 +18,39 @@ function SetEntry() {
       }));
   }
 
+  async function sendEntry(event) {
+    event.preventDefault()
+    try {
+      const response = await fetch(`http://localhost:3001/saveEntry`, {
+
+        method: 'POST',
+        headers : {
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(entry)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`)
+      }
+
+      const data = await response.text();
+      console.log(data)
+
+      handleChange({target: {name: 'id', value: nanoid()}})
+      handleChange({target: {name: 'title', value: ''}})
+      handleChange({target: {name: 'entry', value: ''}})
+      handleChange({target: {name: 'category', value: ''}})
+    } catch (err) {
+      console.log('Error during fetch', err)
+    }
+  }
+
 
   return (
     <main className="set-entry">
       <h1>Introducir Entrada</h1>
-      <form action="">
+      <form onSubmit={sendEntry}>
 
       <input 
       type="text"

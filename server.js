@@ -9,10 +9,11 @@ const port = 3001;
 
 app.use(bodyParser.json())
 
-// app.use(cors({
-//   origin: 'http://localhost:5173/'
-// }))
+app.use(cors({
+  origin: 'http://localhost:5173'
+}))
 
+const mongoUri = 'mongodb+srv://Harlys:Harlys%401234@letitoutcluster.hqqmu.mongodb.net/LetItOut?retryWrites=true&w=majority';
 let db;
 
 MongoClient.connect(mongoUri)
@@ -36,7 +37,7 @@ app.post('/saveEntry', async (req, res) => {
   const {id, title, category, entry} = req.body;
 
   try {
-    await db.collection('Entries').insertOne({id, category, title, entry});
+    await db.collection('Entries').insertOne({id, title, category, entry});
     res.send('Entry data inserted')
   } catch (err) {
     console.log('MongoDB Error', err);
