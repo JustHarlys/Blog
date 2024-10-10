@@ -18,7 +18,7 @@ function SetEntry() {
       }));
   }
 
-  async function sendEntry(event) {
+    async function sendEntry(event) {
     event.preventDefault()
     try {
       const response = await fetch(`http://localhost:3001/saveEntry`, {
@@ -83,6 +83,9 @@ function SetEntry() {
 
       <button type="submit" className="send-entry">Enviar entrada</button>
       </form>
+      <div className="home-content">
+
+      </div>
     </main>
   )
 }

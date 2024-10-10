@@ -4,23 +4,39 @@ import Aside from '../Components/Aside'
 import Entries from '../Components/Entries'
 import { nanoid } from 'nanoid'
 import Footer from '../Components/Footer'
-import entriesTemplate from '../data/entriesTemplate'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
 
 
 
 function Home() {
 
+  const [entries, setEntries] = useState([])
+
+  useEffect(() => {
+    async function fetchEntries() {
+      try {
+        const res = await fetch(`http://localhost:3001/getEntries`);
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        } 
+
+        const data = await res.json();
+        setEntries(data);
+      } catch (err) {
+        console.log('Error during fetch', err)
+      }
+    }
+
+    fetchEntries();
+  }, [])
+
   const [currentPage, setCurrentPage] = useState(1)
 
 
   const itemsPerPage = 3;
-
-  const slicedEntries = entriesTemplate.slice(0,3)
-
-
+  const slicedEntries = entries.reverse().slice(0,3)
   const asideEntries = slicedEntries.map(entry => {
-
   const entryArray = entry.entry.split(' ')
   const entryAside = entryArray.slice(0, 40).join(' ')
 
@@ -32,15 +48,16 @@ function Home() {
   />
   })
 
-  const totalPages = Math.ceil(entriesTemplate.length / itemsPerPage)
+  const totalPages = Math.ceil(entries.length / itemsPerPage)
 
-  const currentEntries = entriesTemplate.slice(
+  const currentEntries = entries.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   )
 
 
   const allEntries = currentEntries.map(entry => {
+
 
     const entryArray = entry.entry.split(' ')
     const entryWords = entryArray.slice(0, 113).join(' ')
@@ -77,6 +94,7 @@ function Home() {
 
       
       {allEntries}
+      {entries != 0 &&
       <div style={{textAlign: 'center'}}>
       <button onClick={prevPage} disabled={currentPage === 1} className='menu-buttons'>
         {'<'}
@@ -86,6 +104,7 @@ function Home() {
         {'>'}
       </button>
       </div>
+      }
 
 
       </div>
