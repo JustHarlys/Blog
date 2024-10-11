@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import SetEntry from './pages/SetEntry'
 import Entry from './pages/Entry'
 
+
 const {POPSTATE, PUSHSTATE} = EVENTS
 
 function Router ({ routes = [], defaultComponent: DefaultComponent = () => null }) {

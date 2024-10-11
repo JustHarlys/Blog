@@ -1,18 +1,20 @@
+
 import Nav from "../Components/Nav"
-import { text } from "../data/text"
+
 
 
 function Entry() {
-  
+
+
   return (
     <div>
       <Nav />
 
       <div className="entry-whole-content">
 
-      <h1 className="entry-title">Entry Title</h1>
-      <h3 className="entry-category">Category: Category</h3>
-      <p className="entry-text">{text}</p>
+      <h1 className="entry-title">{entry.title}</h1>
+      <h3 className="entry-category">Category: {entry.category}</h3>
+      <p className="entry-text">{entry.entry}</p>
       </div>
     </div>
   )

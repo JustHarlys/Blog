@@ -1,6 +1,8 @@
+
 import { Link } from "./Link";
 
 function Entries({id, category, title, entry}) {
+
   return (
     <section className="entries-container">
       <div className="entry">

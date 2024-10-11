@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react'
 
 
 
-
 function Home() {
 
   const [entries, setEntries] = useState([])
