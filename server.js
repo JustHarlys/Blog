@@ -2,7 +2,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { MongoClient, ObjectId } from 'mongodb';
-import dotenv from 'dotenv'
 
 const app = express()
 const port = 3001;
@@ -34,27 +33,26 @@ app.get('/getEntries', async(req, res) => {
 });
 
 app.get('/entry/:id', async (req, res) => {
-  const {id} = req.params;
+  const { id } = req.params;
 
   try {
-    const entry = await db.collection('Entries'.findOne({_id: new ObjectId(id) }))
+    const entry = await db.collection('Entries').findOne({ id: id }); // Corrección
 
     if (!entry) {
-      return res.status(404).json({message: "Entry not found"});
+      return res.status(404).json({ message: "Entry not found" });
     }
     res.json(entry);
   } catch (err) {
-    console.error('Error fetching entry: ', err)
-    res.status(500).json({message: "Server error"})
+    console.error('Error fetching entry: ', err);
+    res.status(500).json({ message: "Server error" });
   }
-
-})
+});
 
 app.post('/saveEntry', async (req, res) => {
-  const { title, category, entry} = req.body;
+  const {id, title, category, entry} = req.body;
 
   try {
-    await db.collection('Entries').insertOne({ title, category, entry});
+    await db.collection('Entries').insertOne({id, title, category, entry});
     res.send('Entry data inserted')
   } catch (err) {
     console.log('MongoDB Error', err);

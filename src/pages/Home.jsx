@@ -64,7 +64,7 @@ function Home() {
   
     return <Entries 
     key={nanoid()}
-    id={nanoid()}
+    id={entry.id}
     entry={entryWords}
     category={entry.category}
     title={entry.title}

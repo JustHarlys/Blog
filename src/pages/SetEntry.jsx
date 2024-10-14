@@ -37,7 +37,7 @@ function SetEntry() {
       const data = await response.text();
       console.log(data)
 
-      handleChange({target: {name: 'id', value: nanoid()}})
+      handleChange({target: {name: 'id', value: ''}})
       handleChange({target: {name: 'title', value: ''}})
       handleChange({target: {name: 'entry', value: ''}})
       handleChange({target: {name: 'category', value: ''}})

@@ -26,6 +26,12 @@ function Router ({ routes = [], defaultComponent: DefaultComponent = () => null 
    }
   }, [])
 
+  const entryMatch = currentPath.match(/^\/entry\/([a-zA-Z0-9_-]+)$/);
+  if (entryMatch) {
+    const entryId = entryMatch[1];
+    return <Entry entryId={entryId}/>;
+  }
+
   const Page = routes.find(({path}) => path === currentPath)?.Component
 
   return Page ? <Page /> : <DefaultComponent/>
@@ -53,6 +59,9 @@ function App() {
         {
           path: '/entry',
           Component : Entry
+        },
+        {
+
         }
       ]} />
 
