@@ -5,12 +5,16 @@ import Entries from '../Components/Entries'
 import { nanoid } from 'nanoid'
 import Footer from '../Components/Footer'
 import { useEffect, useState } from 'react'
+import Categories from '../Components/Categories'
 
 
 function Home() {
 
+ 
 
   const [entries, setEntries] = useState([])
+  const [originalEntries, setOriginalEntries] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     async function fetchEntries() {
@@ -22,6 +26,7 @@ function Home() {
 
         const data = await res.json();
         setEntries(data);
+        setOriginalEntries(data)
       } catch (err) {
         console.log('Error during fetch', err)
       }
@@ -30,11 +35,13 @@ function Home() {
     fetchEntries();
   }, [])
 
-  const [currentPage, setCurrentPage] = useState(1)
+  const entriesItems = [...new Set(originalEntries.map((value) => value.category))]
+
 
 
   const itemsPerPage = 3;
-  const slicedEntries = entries.reverse().slice(0,3)
+  const totalPages = Math.ceil(entries.length / itemsPerPage)
+  const slicedEntries = entries.slice(0,3)
   const asideEntries = slicedEntries.map(entry => {
   const entryArray = entry.entry.split(' ')
   const entryAside = entryArray.slice(0, 40).join(' ')
@@ -47,7 +54,6 @@ function Home() {
   />
   })
 
-  const totalPages = Math.ceil(entries.length / itemsPerPage)
 
   const currentEntries = entries.slice(
     (currentPage - 1) * itemsPerPage,
@@ -80,6 +86,13 @@ function Home() {
     if (currentPage > 1) setCurrentPage(currentPage - 1)
   }
 
+
+    function filterEntry(curcat) {
+      const newEntry = originalEntries.filter((newVal) => newVal.category === curcat);
+      setEntries(newEntry)
+      setCurrentPage(1)
+    }
+
   return (
 
     
@@ -90,6 +103,10 @@ function Home() {
     <div className='cat-asd'>
 
       <div className='cat-ent'>
+
+
+      <Categories entries={entries} entriesItems={entriesItems} setEntries={setEntries} filter={filterEntry} original={originalEntries}/>
+
 
       {allEntries}
       {entries != 0 &&
@@ -113,6 +130,7 @@ function Home() {
       </aside>
 
     </div>
+
 
     <Footer />
     </>

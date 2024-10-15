@@ -137,13 +137,20 @@ body {
   z-index: 1; /* Asegúrate de que el overlay esté sobre la imagen */
 }
 
-.categories-list {
+.categories {
   display: flex;
-  gap: 10px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 50%;
-  margin-top: 0;
+  gap: 30px;
+}
+
+.category-btn {
+  background-color: var(--red);
+  color: white;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .cat-asd {

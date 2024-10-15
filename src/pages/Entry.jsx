@@ -29,7 +29,7 @@ function Entry({ entryId }) {
   }
 
   if (!entry) {
-    return <p>No entry found.</p>; // Muestra un mensaje si no se encontró ninguna entrada
+    return <p>No entry found.</p>;
   }
 
   return (
