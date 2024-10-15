@@ -16,7 +16,7 @@ function Entries({id, category, title, entry}) {
 
         <h1>{title}</h1>
         <h3>Categoria: {category}</h3>
-        <p>{entry}</p>
+        <p>{entry}.</p>
 
         </div>
         </Link>

@@ -7,8 +7,8 @@ import Footer from '../Components/Footer'
 import { useEffect, useState } from 'react'
 
 
-
 function Home() {
+
 
   const [entries, setEntries] = useState([])
 
@@ -91,7 +91,6 @@ function Home() {
 
       <div className='cat-ent'>
 
-      
       {allEntries}
       {entries != 0 &&
       <div style={{textAlign: 'center'}}>
@@ -109,6 +108,7 @@ function Home() {
       </div>
 
       <aside className="latest-entries">  
+      <h3>Últimas Entradas</h3>
       {asideEntries}
       </aside>
 

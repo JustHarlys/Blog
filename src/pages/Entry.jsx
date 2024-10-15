@@ -36,11 +36,11 @@ function Entry({ entryId }) {
     <div>
       <Nav />
 
-      <div className=''>
+      <div className='entry-whole-content'>
 
       <h1>{entry.title}</h1>
       <h3>Category: {entry.category}</h3>
-      <p>{entry.entry}</p>
+      <p className='entry-text'>{entry.entry}</p>
       </div>
     </div>
   );

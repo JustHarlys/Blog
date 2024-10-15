@@ -186,6 +186,11 @@ aside {
 
 }
 
+aside > h3 {
+  color: black;
+  margin-top: 0;
+}
+
 .latest-entries {
   display: flex;
   flex-direction: column;
@@ -275,16 +280,14 @@ tr > *:not(:first-child) {
 }
 
 .entries-inside-container:hover {
-  background-color: var(--selected);
-  color: white;
+  background-color: #ececec;
 }
 
-.entries-inside-container > a {
+.entry > a {
   color: black;
+  transition: 0.3s ease;
   text-decoration: none;
 }
-
-
 
 .container {
   display: flex;
@@ -322,8 +325,9 @@ tr > *:not(:first-child) {
 
 .entry-text {
   width: 50%;
-  text-align: center;
+  text-align: justify;
 }
+
 
 .about-me-container {
   display: flex;
