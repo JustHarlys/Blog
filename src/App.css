@@ -328,6 +328,7 @@ tr > *:not(:first-child) {
   width: 50%;
   gap: 30px;
   padding: 20px;
+
 }
 
 .set-entry > select {
@@ -418,6 +419,18 @@ footer > p {
 
 span {
   font-size: 1.4rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+}
+
+textarea {
+  width: 600px;
+  height: 500px;
 }
 
 

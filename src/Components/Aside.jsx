@@ -10,7 +10,7 @@ function Aside({id, category, title, entry}) {
             <div className="container">
           
             <h1>{title}</h1>
-            <h3>Category: {category}</h3>
+            <h3>Categoría: {category}</h3>
             <p>{entry}.</p>
         
             </div>

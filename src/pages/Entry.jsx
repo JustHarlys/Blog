@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Nav from '../Components/Nav';
+import Footer from '../Components/Footer';
 
 function Entry({ entryId }) {
   const [entry, setEntry] = useState(null);
@@ -38,7 +39,7 @@ function Entry({ entryId }) {
   }
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p>Cargando entrada...</p>;
   }
 
   if (!entry) {
@@ -51,10 +52,12 @@ function Entry({ entryId }) {
 
       <div className='entry-whole-content'>
         <h1>{entry.title}</h1>
-        <h3>Category: {entry.category}</h3>
+        <h3>Categoría: {entry.category}</h3>
         {/* Formateamos el texto para agregar saltos de línea */}
         <p className='entry-text'>{formatEntryText(entry.entry)}</p>
       </div>
+
+      <Footer />
     </div>
   );
 }

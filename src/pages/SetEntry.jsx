@@ -48,6 +48,8 @@ function SetEntry() {
     <main className="set-entry">
       <h1>Introducir Entrada</h1>
       <form onSubmit={sendEntry}>
+
+        <label htmlFor="Title">Title</label>
         <input
           type="text"
           id="title"
@@ -64,14 +66,14 @@ function SetEntry() {
           onChange={handleChange}
         >
           <option value="select">Select a category</option>
-          <option value="Health">Health</option>
-          <option value="Coding">Coding</option>
-          <option value="Life Experiences">Life Experiences</option>
+          <option value="Salud">Salud</option>
+          <option value="Programación">Programación</option>
+          <option value="Experiencias">Experiencias</option>
         </select>
 
         <label htmlFor="entry">Entry: </label>
         <textarea
-          name="entry"
+          name="entry" 
           id="entry"
           className="input"
           value={entry.entry}

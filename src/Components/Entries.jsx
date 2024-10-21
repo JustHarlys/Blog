@@ -12,12 +12,13 @@ function Entries({id, category, title, entry}) {
         <div className="entries-inside-container">
 
         <h1>{title}</h1>
-        <h3>Categoria: {category}</h3>
+        <h3>Categoría: {category}</h3>
         <p>{entry}.</p>
 
         </div>
         </Link>
       
+
 
       </div>
     </section >
