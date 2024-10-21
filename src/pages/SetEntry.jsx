@@ -67,6 +67,7 @@ function SetEntry() {
       value={entry.category}
       onChange={handleChange}
       >
+        <option value="select">Select a category</option>
         <option value="Health">Health</option>
         <option value="Coding">Coding</option>
         <option value="Life Experiences">Life Experiences</option>

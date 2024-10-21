@@ -31,10 +31,10 @@ function Nav() {
 
         <ul className='nav-items'>
 
-            <li className={`nav-item ${rutaActual === '/' ? 'selected' : ''}`}>
+            <li className={`nav-item ${rutaActual === '/' ? 'selected-nav' : ''}`}>
               <Link to="/">Home</Link> 
             </li>
-            <li className={`nav-item ${rutaActual === '/about' ? 'selected' : '' }`}>
+            <li className={`nav-item ${rutaActual === '/about' ? 'selected-nav' : '' }`}>
               <Link to="/about">About me</Link>
             </li>
         </ul>

@@ -41,7 +41,7 @@ function Home() {
 
   const itemsPerPage = 3;
   const totalPages = Math.ceil(entries.length / itemsPerPage)
-  const slicedEntries = entries.slice(0,3)
+  const slicedEntries = [...originalEntries].reverse().slice(0,3)
   const asideEntries = slicedEntries.map(entry => {
   const entryArray = entry.entry.split(' ')
   const entryAside = entryArray.slice(0, 40).join(' ')

@@ -27,6 +27,11 @@ body {
   border-bottom: 1px solid ;
 }
 
+.entries-map-aside {
+  display: flex;
+  flex-direction: column;
+}
+
 .logo-text {
   color: #333333;
 }
@@ -44,18 +49,11 @@ body {
   transition: 0.3s ease;
 }
 
-.nav-item > a:hover {
-  color: red;
-}
-
-
 .nav-item {
   list-style: none;
 }
 
-.nav-item:hover {
-  color: red;
-}
+
 
 .hero-img {
   height: 10%;        
@@ -151,6 +149,11 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.category-btn:hover {
+  background-color: #751f1f;
 }
 
 .cat-asd {
@@ -267,10 +270,14 @@ tr > *:not(:first-child) {
   border-radius: 400vh;
 }
 
-.selected {
+.selected-nav {
   background-color: var(--selected);
   padding: 10px;
   border-radius: 10px;
+}
+
+.selected {
+  background-color: #831919;
 }
 
 .entries-inside-container {

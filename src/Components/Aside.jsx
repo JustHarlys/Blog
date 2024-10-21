@@ -1,6 +1,7 @@
 import { Link } from "./Link"
 
 function Aside({category, title, entry}) {
+
   return (
     
         <div className="aside-entry">
