@@ -24,6 +24,19 @@ function Entry({ entryId }) {
     fetchEntry();
   }, [entryId]);
 
+  // Función para manejar los saltos de línea
+  function formatEntryText(text) {
+    // Dividimos el texto por saltos de línea (\n) y agregamos <br /> después de cada línea
+    const lines = text.split("\n");
+
+    return lines.map((line, index) => (
+      <span key={index} className='span-text'>
+        {line}
+        <br />
+      </span>
+    ));
+  }
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -37,10 +50,10 @@ function Entry({ entryId }) {
       <Nav />
 
       <div className='entry-whole-content'>
-
-      <h1>{entry.title}</h1>
-      <h3>Category: {entry.category}</h3>
-      <p className='entry-text'>{entry.entry}</p>
+        <h1>{entry.title}</h1>
+        <h3>Category: {entry.category}</h3>
+        {/* Formateamos el texto para agregar saltos de línea */}
+        <p className='entry-text'>{formatEntryText(entry.entry)}</p>
       </div>
     </div>
   );

@@ -314,6 +314,10 @@ tr > *:not(:first-child) {
   border-radius: 10px;
 }
 
+.aside-entry > a {
+  text-decoration: none;
+}
+
 .container:hover {
   background-color: #751f1f;
 }
@@ -340,6 +344,10 @@ tr > *:not(:first-child) {
 .entry-text {
   width: 50%;
   text-align: justify;
+}
+
+.span-text {
+  font-size: 12px;
 }
 
 
@@ -380,6 +388,9 @@ footer > p {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+.input {
+  white-space: pre-wrap;
 }
 
 .fa-brands {

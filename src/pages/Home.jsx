@@ -48,6 +48,7 @@ function Home() {
 
   return <Aside 
   key={nanoid()}
+  id={entry.id}
   entry={entryAside}
   category={entry.category}
   title={entry.title}

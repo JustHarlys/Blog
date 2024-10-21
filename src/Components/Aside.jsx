@@ -1,12 +1,12 @@
 import { Link } from "./Link"
 
-function Aside({category, title, entry}) {
+function Aside({id, category, title, entry}) {
 
   return (
     
         <div className="aside-entry">
 
-
+            <Link to={`/entry/${id}`}> 
             <div className="container">
           
             <h1>{title}</h1>
@@ -14,6 +14,7 @@ function Aside({category, title, entry}) {
             <p>{entry}.</p>
         
             </div>
+            </Link>
         </div>
   )
 }

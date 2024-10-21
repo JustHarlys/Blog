@@ -2,9 +2,6 @@ import { Link } from "./Link";
 
 function Entries({id, category, title, entry}) {
 
-  function handleClick () {
-    console.log(id)
-  }
 
   return (
     <section className="entries-container">
@@ -12,7 +9,7 @@ function Entries({id, category, title, entry}) {
 
 
         <Link to={`/entry/${id}`}>
-        <div className="entries-inside-container" onClick={handleClick}>
+        <div className="entries-inside-container">
 
         <h1>{title}</h1>
         <h3>Categoria: {category}</h3>
