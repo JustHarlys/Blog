@@ -12,7 +12,7 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.json())
 
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'https://harlys-blog.vercel.app/'
 }))
 
 const mongoUri = process.env.DATABASE_URL;
