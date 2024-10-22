@@ -9,7 +9,7 @@ function Entry({ entryId }) {
   useEffect(() => {
     async function fetchEntry() {
       try {
-        const response = await fetch(`http://localhost:3001/entry/${entryId}`);
+        const response = await fetch(`https://blog-production-1b45.up.railway.app/entry/${entryId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch entry');
         }

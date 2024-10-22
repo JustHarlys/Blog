@@ -20,7 +20,7 @@ function SetEntry() {
   async function sendEntry(event) {
     event.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3001/saveEntry`, {
+      const response = await fetch(`https://blog-production-1b45.up.railway.app/saveEntry`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
