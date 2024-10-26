@@ -25,9 +25,7 @@ function Entry({ entryId }) {
     fetchEntry();
   }, [entryId]);
 
-  // Función para manejar los saltos de línea
   function formatEntryText(text) {
-    // Dividimos el texto por saltos de línea (\n) y agregamos <br /> después de cada línea
     const lines = text.split("\n");
 
     return lines.map((line, index) => (

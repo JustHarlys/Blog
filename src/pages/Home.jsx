@@ -19,7 +19,7 @@ function Home() {
   useEffect(() => {
     async function fetchEntries() {
       try {
-        const res = await fetch(`http://localhost:3001/getEntries`);
+        const res = await fetch(`https://blog-production-1b45.up.railway.app/getEntries`);
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         } 
@@ -67,7 +67,6 @@ function Home() {
     const entryArray = entry.entry.split(' ');
     const entryWords = entryArray.slice(0, 113).join(' ');
   
-    // Identificar si es el último elemento
     const isLastEntry = index === currentEntries.length - 1;
   
     return (
@@ -77,7 +76,7 @@ function Home() {
         entry={entryWords}
         category={entry.category}
         title={entry.title}
-        isLastEntry={isLastEntry} // Pasamos esta prop para identificar el último
+        isLastEntry={isLastEntry} 
       />
     );
   });
