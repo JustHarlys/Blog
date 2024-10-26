@@ -19,7 +19,7 @@ function Home() {
   useEffect(() => {
     async function fetchEntries() {
       try {
-        const res = await fetch(`https://blog-production-1b45.up.railway.app/getEntries`);
+        const res = await fetch(`http://localhost:3001/getEntries`);
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         } 
@@ -62,22 +62,25 @@ function Home() {
   )
 
 
-  const allEntries = currentEntries.map(entry => {
+  const allEntries = currentEntries.map((entry, index) => {
 
-
-    const entryArray = entry.entry.split(' ')
-    const entryWords = entryArray.slice(0, 113).join(' ')
+    const entryArray = entry.entry.split(' ');
+    const entryWords = entryArray.slice(0, 113).join(' ');
   
+    // Identificar si es el último elemento
+    const isLastEntry = index === currentEntries.length - 1;
   
-    return <Entries 
-    key={nanoid()}
-    id={entry.id}
-    entry={entryWords}
-    category={entry.category}
-    title={entry.title}
-    />
-  })
-
+    return (
+      <Entries 
+        key={nanoid()}
+        id={entry.id}
+        entry={entryWords}
+        category={entry.category}
+        title={entry.title}
+        isLastEntry={isLastEntry} // Pasamos esta prop para identificar el último
+      />
+    );
+  });
 
   const nextPage = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1)

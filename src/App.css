@@ -165,13 +165,12 @@ body {
 .cat-ent {
   display: flex;
   flex-direction: column;
-
+  gap: 20px;
 }
 
 .entry {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .container > a {
@@ -179,9 +178,13 @@ body {
   text-decoration: none;
 }
 
+.container > * {
+  margin: 10px;
+}
+
 .entries-container {
   width: 100%;
-  padding: 20px;
+  padding-left: 20px;
 }
 
 .counter {
@@ -193,7 +196,6 @@ aside {
   margin-left: 15px;
   float: right;
   color: white;
-
 }
 
 aside > h3 {
@@ -283,19 +285,38 @@ tr > *:not(:first-child) {
 .entries-inside-container {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   transition: 0.3s ease;
   padding: 10px;
   background-color: white;
-  border-radius: 10px;
-  -webkit-box-shadow: 10px 10px 5px 0px var(--red);
-  -moz-box-shadow: 10px 10px 5px 0px var(--red);
-  box-shadow: 10px 10px 5px 0px var(--red);
+  border-bottom: #333333 solid 1px;
 }
 
-.entries-inside-container:hover {
-  background-color: #ececec;
+.entries-inside-container:last-of-type {
+  border-bottom: none;
 }
+
+.entries-inside-container > * {
+  margin: 12px;
+}
+
+.entries-inside-container > h1 {
+  color: #010101;
+}
+
+.entries-inside-container > h3 {
+  color: #262628;
+}
+
+
+.entries-inside-container > p {
+  color: #787878;
+}
+
+.entries-inside-container > a {
+  color: #0c21dd;
+}
+
+
 
 .entry > a {
   color: black;

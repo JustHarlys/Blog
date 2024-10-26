@@ -9,8 +9,8 @@ function Aside({id, category, title, entry}) {
             <Link to={`/entry/${id}`}> 
             <div className="container">
           
+            <h3>{category}</h3>
             <h1>{title}</h1>
-            <h3>Categoría: {category}</h3>
             <p>{entry}.</p>
         
             </div>
