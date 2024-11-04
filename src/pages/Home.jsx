@@ -19,7 +19,7 @@ function Home() {
   useEffect(() => {
     async function fetchEntries() {
       try {
-        const res = await fetch(`http://localhost:3001/getEntries`);
+        const res = await fetch(`https://blog-production-1b45.up.railway.app/getEntries`);
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         } 
