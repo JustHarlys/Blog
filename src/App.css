@@ -472,6 +472,27 @@ textarea {
 
 /* Para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
+
+  .about-me-container {
+    margin-bottom: -100px;
+  }
+
+  .about-me-p {
+    width: 80%;
+  }
+
+  table {
+    font-size: 15px;
+     }
+
+  .categories {
+    gap: 10px;
+  }
+
+  .latest-entries {
+    display: none;
+  }
+
   .hero-img {
     height: 60%;       
   }
