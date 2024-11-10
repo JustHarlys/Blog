@@ -51,7 +51,6 @@ function Entry({ entryId }) {
       <div className='entry-whole-content'>
         <h1>{entry.title}</h1>
         <h3>Categoría  : {entry.category}</h3>
-        {/* Formateamos el texto para agregar saltos de línea */}
         <p className='entry-text'>{formatEntryText(entry.entry)}</p>
       </div>
 

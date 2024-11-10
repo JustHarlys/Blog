@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
-import path from 'path'; // Importas 'path'
+import path from 'path'; 
 
 dotenv.config();
 
@@ -55,6 +55,18 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+app.post('/saveEntry', async (req, res) => {
+  const {id, title, category, entry} = req.body;
+
+  try {
+    await db.collection('Entries').insertOne({id, title, category, entry});
+    res.send('Entry data inserted')
+  } catch (err) {
+    console.log('MongoDB Error', err);
+    res.status(500).send('Error inserting data');
+  }
 });
 
 

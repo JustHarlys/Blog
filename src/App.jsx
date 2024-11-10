@@ -59,9 +59,6 @@ function App() {
         {
           path: '/entry',
           Component : Entry
-        },
-        {
-
         }
       ]} />
 
