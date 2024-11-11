@@ -12,7 +12,7 @@ const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 app.use(cors({
-  origin: ['https://harlys-blog.vercel.app', 'http://localhost:5173', 'https://harlys-blog.vercel.app/setEntry']
+  origin: ['https://harlys-blog.vercel.app', 'http://localhost:5173']
 }));
 
 const mongoUri = process.env.DATABASE_URL;
@@ -57,17 +57,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.post('/saveEntry', async (req, res) => {
-  const {id, title, category, entry} = req.body;
-
-  try {
-    await db.collection('Entries').insertOne({id, title, category, entry});
-    res.send('Entry data inserted')
-  } catch (err) {
-    console.log('MongoDB Error', err);
-    res.status(500).send('Error inserting data');
-  }
-});
 
 
 app.listen(port, () => {
